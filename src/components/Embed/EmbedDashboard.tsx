@@ -16,7 +16,7 @@ export const EmbedDashboard: React.FC<EmbedProps> = () => {
   const [running, setRunning] = React.useState(true)
   const [dashboard, setDashboard] = React.useState<LookerEmbedDashboard>()
   const extensionContext = useContext<ExtensionContextData>(ExtensionContext)
-  const filters = {0:'Texas',1:'California',2:'Florida',3:'Ohio'}
+  const filters = {0:'Login_Login',1:'FT_UPI',2:'FT_Mobile',3:'FT_MMID',4:'FT_Account',5:'FA_UPI'}
 
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ export const EmbedDashboard: React.FC<EmbedProps> = () => {
     if (el && hostUrl) {
       el.innerHTML = ''
       LookerEmbedSDK.init(hostUrl)
-      const db = LookerEmbedSDK.createDashboardWithId(3)
+      const db = LookerEmbedSDK.createDashboardWithId(4)
       // db.withNext()
       db.appendTo(el)
         .build()
